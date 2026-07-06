@@ -1,7 +1,7 @@
 // images setup
 // const images = ["images/Social_Network_Analysis_Visualization.png"];
 // const images = ["images/data_robot.png"];
-const images = ["images/Data_Visualization2.jpg"];
+const images = ["images/Data_Visualization4.jpg"];
 // const images = ["images/data_visualize.png"];
 
 // content setup
@@ -47,7 +47,7 @@ rgbKineticSlider = new rgbKineticSlider({
   navImagesRgbIntensity: 80, // set img rgb intensity for regular nav
 
   // texts settings
-  textsDisplay: true, // show title
+  textsDisplay: false, // show title
   textsSubTitleDisplay: true, // show subtitles
   textsTiltEffect: true, // enable text tilt
   googleFonts: ["Playfair Display:700", "Roboto:400"], // select google font to use
