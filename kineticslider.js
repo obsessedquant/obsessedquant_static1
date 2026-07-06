@@ -1,7 +1,7 @@
 // images setup
 // const images = ["images/Social_Network_Analysis_Visualization.png"];
 // const images = ["images/data_robot.png"];
-const images = ["images/Data_Visualization4.jpg"];
+const images = ["images/Data_Visualization4.png"];
 // const images = ["images/data_visualize.png"];
 
 // content setup
