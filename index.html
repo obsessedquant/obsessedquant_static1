@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
 
     <title>OQ | Home</title>
 
@@ -14,26 +17,18 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- slider -->
-    <a href="./landing.html">
-      <div id="rgbKineticSlider" class="rgbKineticSlider"></div
-    ></a>
+    <main class="hero">
+      <a class="hero-link" href="./landing.html" aria-label="Enter OQ Market Analytics">
+        <div id="rgbKineticSlider" class="rgbKineticSlider"></div>
+      </a>
 
-    <!-- slider nav -->
-    <!-- <nav>
-      <a href="#" class="main-nav prev" data-nav="previous">Prev <span></span></a>
-      <a href="./landing.html" class="main-nav next" data-nav="next"
-        >Next <span></span
-      ></a>
-    </nav> -->
-
-    <!-- justify-content: center -->
-
-    <nav>
-      <a href="./landing.html" class="button" style="text-align: center"
-        >Let's<br />Go <span></span
-      ></a>
-    </nav>
+      <nav class="hero-nav" aria-label="Enter site">
+        <a href="./landing.html" class="button">
+          <span class="button-label">Let's Go</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+    </main>
 
     <!-- For kineticslider -->
     <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/TweenMax.min.js"></script>
@@ -41,7 +36,6 @@
     <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi-filters.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/rgbKineticSlider.js"></script>
-
     <script src="./kineticslider.js"></script>
   </body>
 </html>
