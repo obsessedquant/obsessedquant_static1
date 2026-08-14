@@ -1,71 +1,66 @@
-// images setup
-// const images = ["images/Social_Network_Analysis_Visualization.png"];
-// const images = ["images/data_robot.png"];
-const images = ["images/Data_Visualization4.png"];
-// const images = ["images/data_visualize.png"];
+// Use the portrait artwork on phones and the original artwork elsewhere.
+// Both files should exist in the site's /images directory.
+const isMobileHero = window.matchMedia("(max-width: 768px)").matches;
 
-// content setup
-const texts = [
-  ["obsessedquant", "Surface gravity: 9.807 m/s²"],
-  // ["Mars", "Surface gravity: 3.711 m/s²"],
-  // ["Venus", "Surface gravity: 8.87 m/s²"],
+const images = [
+  isMobileHero
+    ? "images/Data_Visualization4_mobile.png"
+    : "images/Data_Visualization4.png",
 ];
 
-// init plugin
-rgbKineticSlider = new rgbKineticSlider({
+// The ObsessedQuant wordmark is already part of the hero artwork, so the
+// slider's generated title/subtitle text is intentionally disabled.
+const texts = [["", ""]];
+
+const rgbKineticSliderInstance = new rgbKineticSlider({
   // images and content sources
-  slideImages: images, // array of images >demo size : 1920 x 1080
-  itemsTitles: texts, // array of titles / subtitles
+  slideImages: images,
+  itemsTitles: texts,
 
   // displacement images sources
-  backgroundDisplacementSprite: "./images/map-9.jpg", // slide displacement image
-  cursorDisplacementSprite: "./images/displace-circle.png", // cursor displacement image
+  backgroundDisplacementSprite: "./images/map-9.jpg",
+  cursorDisplacementSprite: "./images/displace-circle.png",
 
   // cursor displacement effect
-  cursorImgEffect: true, // enable cursor effect
-  cursorTextEffect: true, // enable cursor text effect
-  cursorScaleIntensity: 0.65, // cursor effect intensity
-  cursorMomentum: 0.14, // lower is slower
+  cursorImgEffect: true,
+  cursorTextEffect: false,
+  cursorScaleIntensity: 0.65,
+  cursorMomentum: 0.14,
 
   // swipe
-  swipe: true, // enable swipe
-  swipeDistance: window.innerWidth * 0.4, // swipe distance - ex : 580
-  swipeScaleIntensity: 2, // scale intensity during swipping
+  swipe: true,
+  swipeDistance: window.innerWidth * 0.4,
+  swipeScaleIntensity: 2,
 
   // slide transition
-  slideTransitionDuration: 1, // transition duration
-  transitionScaleIntensity: 30, // scale intensity during transition
-  transitionScaleAmplitude: 160, // scale amplitude during transition
+  slideTransitionDuration: 1,
+  transitionScaleIntensity: 30,
+  transitionScaleAmplitude: 160,
 
-  // regular navigation
-  // nav: true, // enable navigation
-  // navElement: ".main-nav", // set nav class
+  // image RGB effect
+  imagesRgbEffect: true,
+  imagesRgbIntensity: 0.9,
+  navImagesRgbIntensity: 80,
 
-  // image rgb effect
-  imagesRgbEffect: true, // enable img rgb effect
-  imagesRgbIntensity: 0.9, // set img rgb intensity
-  navImagesRgbIntensity: 80, // set img rgb intensity for regular nav
+  // Text is baked into the supplied artwork.
+  textsDisplay: false,
+  textsSubTitleDisplay: false,
+  textsTiltEffect: false,
+  googleFonts: ["Playfair Display:700", "Roboto:400"],
+  buttonMode: false,
+  textsRgbEffect: false,
+  textsRgbIntensity: 0.03,
+  navTextsRgbIntensity: 15,
 
-  // texts settings
-  textsDisplay: false, // show title
-  textsSubTitleDisplay: true, // show subtitles
-  textsTiltEffect: true, // enable text tilt
-  googleFonts: ["Playfair Display:700", "Roboto:400"], // select google font to use
-  buttonMode: true, // enable button mode for title
-  textsRgbEffect: true, // enable text rgb effect
-  textsRgbIntensity: 0.03, // set text rgb intensity
-  navTextsRgbIntensity: 15, // set text rgb intensity for regular nav
+  textTitleColor: "white",
+  textTitleSize: 125,
+  mobileTextTitleSize: 60,
+  textTitleLetterspacing: 3,
 
-  //   textTitleColor: "rgb(205,174,81)", // title color
-  textTitleColor: "white", // title color
-  textTitleSize: 125, // title size
-  mobileTextTitleSize: 60, // title size
-  textTitleLetterspacing: 3, // title letterspacing
-
-  textSubTitleColor: "white", // subtitle color ex : 0x000000
-  textSubTitleSize: 21, // subtitle size
-  mobileTextSubTitleSize: 21, // mobile subtitle size
-  textSubTitleLetterspacing: 2, // subtitle letter spacing
-  textSubTitleOffsetTop: 90, // subtitle offset top
-  mobileTextSubTitleOffsetTop: 90, // mobile subtitle offset top
+  textSubTitleColor: "white",
+  textSubTitleSize: 21,
+  mobileTextSubTitleSize: 21,
+  textSubTitleLetterspacing: 2,
+  textSubTitleOffsetTop: 90,
+  mobileTextSubTitleOffsetTop: 90,
 });
