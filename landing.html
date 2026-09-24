@@ -25,6 +25,78 @@
     />
 
     <link rel="stylesheet" href="./css/landing.css" />
+
+    <style>
+        /* Founding member promotion */
+        .oq-founding-offer {
+            max-width: 760px;
+            margin: 2rem auto 0;
+            padding: 1.35rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(34, 211, 238, 0.08));
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .oq-founding-offer-label {
+            margin-bottom: 0.45rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #c4b5fd;
+        }
+
+        .oq-founding-offer-title {
+            margin-bottom: 0.55rem;
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .oq-founding-offer-text {
+            margin: 0 auto 0.9rem;
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.84);
+            line-height: 1.6;
+        }
+
+        .oq-founding-offer-code {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0.65rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .oq-founding-offer-code strong {
+            display: inline-block;
+            padding: 0.4rem 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 0.5rem;
+            background: rgba(0, 0, 0, 0.24);
+            color: #ffffff;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+        }
+
+        .oq-founding-offer-limit {
+            margin: 0;
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.64);
+        }
+
+        @media (max-width: 575.98px) {
+            .oq-founding-offer {
+                margin-top: 1.5rem;
+                padding: 1.15rem 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -178,6 +250,27 @@
                         View Free Preview
                     </a>
                 </div>
+
+                <aside class="oq-founding-offer" aria-label="Founding member promotion">
+                    <div class="oq-founding-offer-label">Founding Member Offer &bull; First 100 Members</div>
+
+                    <div class="oq-founding-offer-title">
+                        Save 33% on Monthly or Annual Membership
+                    </div>
+
+                    <p class="oq-founding-offer-text">
+                        Join as a founding member and receive <strong>33% off</strong> your
+                        monthly or annual membership for the life of your subscription.
+                    </p>
+
+                    <div class="oq-founding-offer-code">
+                        Use code <strong>FIRST100</strong> at checkout
+                    </div>
+
+                    <p class="oq-founding-offer-limit">
+                        Limited to the first 100 redemptions.
+                    </p>
+                </aside>
             </div>
         </section>
 
