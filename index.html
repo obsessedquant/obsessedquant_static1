@@ -1,41 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
 
-    <title>OQ | Home</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+        name="description"
+        content="OQ Market Analytics provides ATR-based market analysis, portfolio analytics, dashboard previews, member tools, volatility regime classification, and a browser-based position size calculator."
+    />
+    <meta name="author" content="OQ Market Analytics LLC" />
+
+    <title>OQ Market Analytics</title>
 
     <link rel="icon" type="image/png" sizes="16x16" href="./images/OQ_icon_16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/OQ_icon_32x32.png" />
     <link rel="icon" type="image/png" sizes="128x128" href="./images/OQ_icon_128x128.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./images/OQ_icon_180x180.png" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <main class="hero">
-      <a class="hero-link" href="./landing.html" aria-label="Enter OQ Market Analytics">
-        <div id="rgbKineticSlider" class="rgbKineticSlider"></div>
-      </a>
 
-      <nav class="hero-nav" aria-label="Enter site">
-        <a href="./landing.html" class="button">
-          <span class="button-label">Let's Go</span>
-          <span class="button-arrow" aria-hidden="true">→</span>
-        </a>
-      </nav>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/landing.css" />
+
+    <style>
+        /* Founding member promotion */
+        .oq-founding-offer {
+            max-width: 760px;
+            margin: 2rem auto 0;
+            padding: 1.35rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(34, 211, 238, 0.08));
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .oq-founding-offer-label {
+            margin-bottom: 0.45rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #c4b5fd;
+        }
+
+        .oq-founding-offer-title {
+            margin-bottom: 0.55rem;
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .oq-founding-offer-text {
+            margin: 0 auto 0.9rem;
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.84);
+            line-height: 1.6;
+        }
+
+        .oq-founding-offer-code {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0.65rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .oq-founding-offer-code strong {
+            display: inline-block;
+            padding: 0.4rem 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 0.5rem;
+            background: rgba(0, 0, 0, 0.24);
+            color: #ffffff;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+        }
+
+        .oq-founding-offer-limit {
+            margin: 0;
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.64);
+        }
+
+        @media (max-width: 575.98px) {
+            .oq-founding-offer {
+                margin-top: 1.5rem;
+                padding: 1.15rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark oq-navbar fixed-top" aria-label="Primary navigation">
+        <div class="container">
+            <a class="navbar-brand oq-brand" href="/">
+                OQ <span>Market Analytics</span>
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            id="dashboardDropdown"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Dashboards
+                        </a>
+
+                        <ul
+                            class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                            aria-labelledby="dashboardDropdown"
+                        >
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="https://alerts.obsessedquant.com/atr/index.html"
+                                >
+                                    Members Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="https://alerts.obsessedquant.com/atr/dashboard-preview.html"
+                                >
+                                    Free Dashboard Preview
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="https://alerts.obsessedquant.com/atr/regimes/index.html"
+                                >
+                                    Regimes Dashboard
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="https://alerts.obsessedquant.com/portfolio/"
+                                >
+                                    Portfolio Members Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="https://alerts.obsessedquant.com/portfolio/dashboard-preview.html"
+                                >
+                                    Portfolio Dashboard Preview
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="/position-size-calculator.html"
+                                >
+                                    Position Size Calculator
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="https://alerts.obsessedquant.com/legal/"
+                        >
+                            Legal
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="https://alerts.obsessedquant.com/support/"
+                        >
+                            Support
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="oq-hero">
+            <div class="container text-center">
+                <p class="oq-eyebrow">OQ MARKET ANALYTICS</p>
+
+                <h1 class="oq-title">
+                    Data-driven market analysis through
+                    <span>volatility and regime classification</span>
+                </h1>
+
+                <p class="oq-lead">
+                    Review ATR-based price ranges, explore trend portfolio analytics,
+                    compare current market conditions and volatility regimes, or sign in
+                    to access subscriber-only dashboards.
+                </p>
+
+                <div class="oq-hero-actions">
+                    <a
+                        class="btn oq-button"
+                        href="https://alerts.obsessedquant.com/atr/index.html"
+                    >
+                        Open Members Dashboard
+                    </a>
+
+                    <a
+                        class="btn oq-button-secondary"
+                        href="https://alerts.obsessedquant.com/atr/dashboard-preview.html"
+                    >
+                        View Free Preview
+                    </a>
+                </div>
+
+                <aside class="oq-founding-offer" aria-label="Founding member promotion">
+                    <div class="oq-founding-offer-label">Founding Member Offer &bull; First 100 Members</div>
+
+                    <div class="oq-founding-offer-title">
+                        Save 33% on Monthly or Annual Membership
+                    </div>
+
+                    <p class="oq-founding-offer-text">
+                        Join as a founding member and receive <strong>33% off</strong> your
+                        monthly or annual membership for the life of your subscription.
+                    </p>
+
+                    <div class="oq-founding-offer-code">
+                        Use code <strong>FIRST100</strong> at checkout
+                    </div>
+
+                    <p class="oq-founding-offer-limit">
+                        Limited to the first 100 redemptions.
+                    </p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="oq-dashboard-section" aria-labelledby="dashboard-heading">
+            <div class="container">
+                <div class="text-center oq-section-heading">
+                    <h2 id="dashboard-heading">Explore Dashboards and Tools</h2>
+                    <p>
+                        Choose the dashboard or risk-management tool that matches
+                        the market context or workflow you need.
+                    </p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card oq-card h-100">
+                            <img
+                                class="card-img-top"
+                                src="./images/OQ_horizontal_0_light.png"
+                                alt="Preview of the ATR Regime Dashboard"
+                            />
+
+                            <div class="card-body">
+                                <span class="oq-card-label">Subscriber Access</span>
+                                <h3 class="card-title">ATR Members Dashboard</h3>
+
+                                <p class="card-text">
+                                    Sign in to access the subscriber dashboard, current
+                                    ATR opportunity data, market classifications, and
+                                    member-only analytical features.
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <a
+                                    href="https://alerts.obsessedquant.com/atr/index.html"
+                                    class="btn oq-button"
+                                >
+                                    Sign In or Subscribe
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card oq-card h-100">
+                            <img
+                                class="card-img-top"
+                                src="./images/atr_regime_dashboard.png"
+                                alt="Preview image of the free ATR dashboard demonstration"
+                            />
+
+                            <div class="card-body">
+                                <span class="oq-card-label">Free Access</span>
+                                <h3 class="card-title">ATR Dashboard Preview</h3>
+
+                                <p class="card-text">
+                                    Review a public preview of the dashboard layout,
+                                    calculations, classifications, and analytical
+                                    presentation before subscribing.
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <a
+                                    href="https://alerts.obsessedquant.com/atr/dashboard-preview.html"
+                                    class="btn oq-button-secondary"
+                                >
+                                    Open Free Preview
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card oq-card h-100">
+                            <img
+                                class="card-img-top"
+                                src="./images/regimes.png"
+                                alt="Market regime dashboard preview"
+                            />
+
+                            <div class="card-body">
+                                <span class="oq-card-label">Market Context</span>
+                                <h3 class="card-title">Regimes Dashboard</h3>
+
+                                <p class="card-text">
+                                    Explore market-regime information and historical
+                                    context used to interpret volatility, trend, and
+                                    changing market conditions.
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <a
+                                    href="https://alerts.obsessedquant.com/atr/regimes/index.html"
+                                    class="btn oq-button-secondary"
+                                >
+                                    Open Regimes Dashboard
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card oq-card h-100">
+                            <img
+                                class="card-img-top"
+                                src="./images/portfolio.png"
+                                alt="OQ Market Analytics portfolio members dashboard"
+                            />
+
+                            <div class="card-body">
+                                <span class="oq-card-label">Subscriber Access</span>
+                                <h3 class="card-title">Portfolio Members Dashboard</h3>
+
+                                <p class="card-text">
+                                    Sign in to access current trend market lifecycle,
+                                    group leadership, correlation-aware portfolio
+                                    selection, target allocations, and rebalance analytics.
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <a
+                                    href="https://alerts.obsessedquant.com/portfolio/"
+                                    class="btn oq-button"
+                                >
+                                    Open Portfolio Dashboard
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card oq-card h-100">
+                            <img
+                                class="card-img-top"
+                                src="./images/trend.png"
+                                alt="Preview of the OQ Market Analytics portfolio dashboard"
+                            />
+
+                            <div class="card-body">
+                                <span class="oq-card-label">Free Access</span>
+                                <h3 class="card-title">Portfolio Dashboard Preview</h3>
+
+                                <p class="card-text">
+                                    Explore a static demonstration of the portfolio
+                                    dashboard layout, trend lifecycle views, group leadership,
+                                    allocation analytics, and portfolio presentation.
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <a
+                                    href="https://alerts.obsessedquant.com/portfolio/dashboard-preview.html"
+                                    class="btn oq-button-secondary"
+                                >
+                                    Open Portfolio Preview
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="card oq-card h-100">
+                            <img
+                                class="card-img-top"
+                                src="./images/position_size_image.png"
+                                alt="OQ Market Analytics position size calculator"
+                            />
+
+                            <div class="card-body">
+                                <span class="oq-card-label">Risk Management Tool</span>
+                                <h3 class="card-title">Position Size Calculator</h3>
+
+                                <p class="card-text">
+                                    Calculate target risk, position value, and shares
+                                    from your entry price, stop-loss price, account size,
+                                    risk percentage, and maximum allocation cap.
+                                </p>
+                            </div>
+
+                            <div class="card-footer">
+                                <a
+                                    href="/position-size-calculator.html"
+                                    class="btn oq-button-secondary"
+                                >
+                                    Open Position Size Calculator
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="oq-disclaimer-section">
+            <div class="container">
+                <div class="oq-disclaimer">
+                    <strong>Important:</strong>
+                    Market analytics are provided for informational, analytical,
+                    research, and educational purposes only. They do not constitute
+                    personalized financial or investment advice and do not guarantee
+                    any financial result.
+                    <a href="https://alerts.obsessedquant.com/legal/financial-disclaimer.html">
+                        Read the Financial and Investment Disclaimer
+                    </a>
+                    and
+                    <a href="https://alerts.obsessedquant.com/legal/risk-disclosure.html">
+                        Risk Disclosure
+                    </a>.
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- For kineticslider -->
-    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/TweenMax.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/imagesLoaded.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi-filters.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/rgbKineticSlider.js"></script>
-    <script src="./kineticslider.js"></script>
-  </body>
+    <footer class="oq-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Legal and support links">
+                <a href="https://alerts.obsessedquant.com/legal/">Legal</a>
+                <a href="https://alerts.obsessedquant.com/legal/terms.html">Terms</a>
+                <a href="https://alerts.obsessedquant.com/legal/privacy.html">Privacy</a>
+                <a href="https://alerts.obsessedquant.com/legal/subscription-cancellation.html">
+                    Subscriptions
+                </a>
+                <a href="https://alerts.obsessedquant.com/legal/refunds.html">Refunds</a>
+                <a href="https://alerts.obsessedquant.com/legal/financial-disclaimer.html">
+                    Financial Disclaimer
+                </a>
+                <a href="https://alerts.obsessedquant.com/legal/risk-disclosure.html">
+                    Risk Disclosure
+                </a>
+                <a href="https://alerts.obsessedquant.com/legal/accessibility.html">
+                    Accessibility
+                </a>
+                <a href="https://alerts.obsessedquant.com/legal/cookies.html">Cookies</a>
+                <a href="https://alerts.obsessedquant.com/support/">Support</a>
+            </nav>
+
+            <div class="footer-dashboard-links">
+                <a href="https://alerts.obsessedquant.com/atr/index.html">
+                    Members Dashboard
+                </a>
+                <a href="https://alerts.obsessedquant.com/atr/dashboard-preview.html">
+                    Free Preview
+                </a>
+                <a href="https://alerts.obsessedquant.com/atr/regimes/index.html">
+                    Regimes Dashboard
+                </a>
+                <a href="https://alerts.obsessedquant.com/portfolio/">
+                    Portfolio Members Dashboard
+                </a>
+                <a href="https://alerts.obsessedquant.com/portfolio/dashboard-preview.html">
+                    Portfolio Preview
+                </a>
+                <a href="/position-size-calculator.html">
+                    Position Size Calculator
+                </a>
+            </div>
+
+            <div class="footer-copyright">
+                &copy; <span id="copyright-year">2026</span>
+                OQ Market Analytics LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById("copyright-year").textContent =
+            new Date().getFullYear();
+    </script>
+</body>
+
 </html>
